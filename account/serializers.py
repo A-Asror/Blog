@@ -17,7 +17,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
         return User.objects.create_user(password=password, **validated_data)
 
 
-class LoginSerializer(BaseSerializer, serializers.Serializer):
+class LoginSerializer(serializers.Serializer):
     email = serializers.CharField(max_length=255)
     password = serializers.CharField(max_length=128, min_length=8)
 

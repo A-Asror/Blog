@@ -68,7 +68,8 @@ class LogoutView(APIView):
 
 
 class UsersAPIView(CRUDObjectApiView):
-    permission_classes = [IsAuthenticatedCustom]
+    # permission_classes = [IsAuthenticatedCustom]
+    permission_classes = [AllowAny]
     serializer_class = ProfileSerializer
     queryset = UserProfile
     detail = True
